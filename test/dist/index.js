@@ -666,7 +666,8 @@ function compose (first, ...fns) {
 function curry (fn, arityLeft) {
   const arity = arityLeft || fn.length;
   return (...args) => {
-    if (arity === args.length) {
+    const argLength = args.length || 1;
+    if (arity === argLength) {
       return fn(...args);
     } else {
       const func = (...moreArgs) => fn(...args, ...moreArgs);
@@ -715,6 +716,11 @@ var index = plan$1()
     t.equal(sum(2, 3)(4), 9);
     t.equal(sum(2, 3, 4), 9);
     t.equal(sum(2)(3)(4), 9);
+  })
+  .test('curry with no argument passed', function * (t) {
+    const fn = curry((a, b = 1) => a + b, 2);
+    t.equal(fn(2)(3), 5);
+    t.equal(fn(2)(), 3);
   })
   .test('apply', function * (t) {
     const times2Factory = () => x => x * 2;

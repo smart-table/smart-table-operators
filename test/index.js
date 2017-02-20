@@ -31,6 +31,11 @@ export default zora()
     t.equal(sum(2, 3, 4), 9);
     t.equal(sum(2)(3)(4), 9)
   })
+  .test('curry with no argument passed', function * (t) {
+    const fn = curry((a, b = 1) => a + b, 2);
+    t.equal(fn(2)(3), 5);
+    t.equal(fn(2)(), 3);
+  })
   .test('apply', function * (t) {
     const times2Factory = () => x => x * 2;
     const times2 = apply(times2Factory());
