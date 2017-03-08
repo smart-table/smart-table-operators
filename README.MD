@@ -1,7 +1,9 @@
 # smart-table-operators
 
+[![CircleCI](https://circleci.com/gh/smart-table/smart-table-operators.svg?style=svg)](https://circleci.com/gh/smart-table/smart-table-operators)
+
 A basic set of functional operators (or higher order function) for nodejs and browsers. Used internally in [smart-table]('https://github.com/smart-table/smart-table-core') but can be useful to anyone. However if you need something more elaborated you'll probably be more interested in
-[Ramda]() or [lodash]()
+[Ramda](https://github.com/ramda/ramda) or [lodash](https://github.com/lodash/lodash)
 
 ## Installation
 
