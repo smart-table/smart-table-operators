@@ -1,31 +1,22 @@
-export function swap (f) {
-  return (a, b) => f(b, a);
-}
+export const swap = f => (a, b) => f(b, a);
 
-export function compose (first, ...fns) {
-  return (...args) => fns.reduce((previous, current) => current(previous), first(...args));
-}
+export const compose = (first, ...fns) => (...args) => fns.reduce((previous, current) => current(previous), first(...args));
 
-export function curry (fn, arityLeft) {
-  const arity = arityLeft || fn.length;
-  return (...args) => {
-    const argLength = args.length || 1;
-    if (arity === argLength) {
-      return fn(...args);
-    } else {
-      const func = (...moreArgs) => fn(...args, ...moreArgs);
-      return curry(func, arity - args.length);
-    }
-  };
-}
+export const curry = (fn, arityLeft) => {
+	const arity = arityLeft || fn.length;
+	return (...args) => {
+		const argLength = args.length || 1;
+		if (arity === argLength) {
+			return fn(...args);
+		}
+		const func = (...moreArgs) => fn(...args, ...moreArgs);
+		return curry(func, arity - args.length);
+	};
+};
 
-export function apply (fn) {
-  return (...args) => fn(...args);
-}
+export const apply = fn => (...args) => fn(...args);
 
-export function tap (fn) {
-  return arg => {
-    fn(arg);
-    return arg;
-  }
-}
+export const tap = fn => arg => {
+	fn(arg);
+	return arg;
+};

@@ -2,12 +2,16 @@
   "name": "smart-table-operators",
   "version": "2.0.1",
   "description": "smart table functional operators",
-  "main": "dist/smart-table-functional.js",
-  "jsnext:main": "index.js",
+  "main": "dist/smart-table-operators.js",
+  "module": "dist/smart-table-operators.mjs",
+  "jsnext:main": "./index.js",
   "scripts": {
-    "build:test": "rollup -c ./test/rollup.config.js",
-    "build": "rollup -c ./rollup.config.js",
-    "test": "npm run build:test && node ./test/dist/index.js"
+    "build:node": "rollup -f cjs -o ./dist/smart-table-operators.js ./index.js",
+    "build:es": "rollup -f es -o ./dist/smart-table-operators.mjs ./index.js",
+    "build": "npm run build:es && npm run build:node",
+    "test:node": "rollup -f cjs ./test/index.js | node | tap-diff",
+    "test:browser": "rollup -c ./test/rollup.config.js | tape-run",
+    "test": "xo ./index.js && npm run test:browser && npm run test:node"
   },
   "repository": {
     "type": "git",
@@ -27,8 +31,11 @@
   },
   "homepage": "https://github.com/lorenzofox3/smart-table-operators#readme",
   "devDependencies": {
-    "rollup": "^0.41.4",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "zora": "^0.3.0"
+    "rollup": "^0.54.1",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "tap-diff": "^0.1.1",
+    "tape-run": "^3.0.1",
+    "xo": "^0.18.2",
+    "zora": "^1.1.5"
   }
 }
