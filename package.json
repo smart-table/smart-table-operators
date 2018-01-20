@@ -2,13 +2,11 @@
   "name": "smart-table-operators",
   "version": "2.0.2",
   "description": "smart table functional operators",
-  "main": "dist/smart-table-operators.js",
-  "module": "dist/smart-table-operators.mjs",
+  "main": "dist/",
+  "module": "dist/smart-table-operators.es.js",
   "jsnext:main": "./index.js",
   "scripts": {
-    "build:node": "rollup -f cjs -o ./dist/smart-table-operators.js ./index.js",
-    "build:es": "rollup -f es -o ./dist/smart-table-operators.mjs ./index.js",
-    "build": "npm run build:es && npm run build:node",
+    "build": "rollup -c rollup.conf.js",
     "test:node": "rollup -f cjs ./test/index.js | node | tap-diff",
     "test:browser": "rollup -c ./test/rollup.config.js | tape-run",
     "test": "xo ./index.js && npm run test:browser && npm run test:node"

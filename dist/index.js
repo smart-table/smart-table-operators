@@ -1,5 +1,6 @@
-var smartTableOperators = (function (exports) {
 'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 const swap = f => (a, b) => f(b, a);
 
@@ -29,8 +30,3 @@ exports.compose = compose;
 exports.curry = curry;
 exports.apply = apply;
 exports.tap = tap;
-
-return exports;
-
-}({}));
-//# sourceMappingURL=smart-table-operators.js.map
