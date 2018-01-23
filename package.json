@@ -3,7 +3,7 @@
   "version": "2.0.3",
   "description": "smart table functional operators",
   "main": "dist/",
-  "module": "dist/index.mjs",
+  "module": "./index.js",
   "jsnext:main": "./index.js",
   "scripts": {
     "build": "rollup -c rollup.conf.js",
