@@ -2,4 +2,4 @@
 test
 node_modules
 rollup.conf.js
-circle.yml
+.circleci
