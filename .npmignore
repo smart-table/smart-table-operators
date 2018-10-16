@@ -1,5 +1,6 @@
 .idea
-test
-node_modules
-rollup.conf.js
 .circleci
+node_modules
+rollup
+src/
+test
