@@ -9,7 +9,8 @@
     "noImplicitAny": false,
     "preserveConstEnums": true,
     "target": "es2017",
-    "declaration": true
+    "declaration": true,
+    "declarationDir": "dist/declarations"
   },
   "include": [
     "./dist/src/*"
