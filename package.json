@@ -1,6 +1,6 @@
 {
   "name": "smart-table-operators",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "smart table functional operators",
   "main": "./dist/bundle/index",
   "module": "./dist/bundle/module.js",
