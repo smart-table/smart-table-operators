@@ -1,5 +1,5 @@
 import test from 'zora';
-import {swap, tap, curry, compose, apply} from '../dist/src/index';
+import {swap, tap, curry, compose, apply} from '../dist/bundle/module';
 
 const substract = (a, b) => a - b;
 const addTwo = (a) => a + 2;
