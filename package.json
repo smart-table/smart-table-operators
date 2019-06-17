@@ -9,8 +9,8 @@
     "test": "test"
   },
   "scripts": {
-    "test:ci": "npm run build && npm test",
-    "test": "rollup -c ./test/rollup.config.js | node | tap-diff",
+    "test:ci": "npm run build && npm test | tap-set-exit",
+    "test": "rollup -c ./test/rollup.config.js | node",
     "build:clean": "rm -rf ./dist && mkdir -p ./dist/bundle && cp -r ./src ./dist/src",
     "build:compile": "tsc",
     "build:bundle": "rollup -c ./rollup/build.js && rollup -c ./rollup/cdn.js",
@@ -34,12 +34,12 @@
   },
   "homepage": "https://github.com/lorenzofox3/smart-table-operators#readme",
   "devDependencies": {
-    "rollup": "^1.1.2",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
-    "tap-diff": "^0.1.1",
+    "rollup": "^1.15.6",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.0.3",
+    "tap-set-exit": "^1.1.1",
     "tape-run": "^5.0.0",
-    "typescript": "^3.3.3",
-    "zora": "^2.0.1"
+    "typescript": "^3.5.2",
+    "zora": "^3.0.1"
   }
 }
